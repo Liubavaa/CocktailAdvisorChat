@@ -18,8 +18,6 @@ st.header("Cocktail Advisor ChatBot")
 
 def create_llm_and_embeddings():
     """With Google API"""
-    if not os.getenv("GOOGLE_API_KEY"):
-        os.environ["GOOGLE_API_KEY"] = "AIzaSyAcaKbBZrKl5ll6jr9Ax-gPE1davvxCueg"
     return ChatGoogleGenerativeAI(model="gemini-1.5-pro"), GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
 
@@ -40,9 +38,6 @@ def get_pinecone_stores(embeddings) -> Tuple[PineconeVectorStore, PineconeVector
             while not pc.describe_index(index_name).status["ready"]:
                 time.sleep(1)
 
-
-        if not os.getenv("PINECONE_API_KEY"):
-            os.environ["PINECONE_API_KEY"] = "pcsk_4dPpAE_3si1h2bd9ZfDXyvAxDjSFVrHGZMBo6VuGENdxf53ErnPzkrgdpR3AEYDNBaTtJi"
         pinecone_api_key = os.getenv("PINECONE_API_KEY")
         pc = Pinecone(api_key=pinecone_api_key)
         existing_indexes = [index_info["name"] for index_info in pc.list_indexes()]
