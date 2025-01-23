@@ -61,7 +61,7 @@ The implemented solution uses Google’s **gemini-1.5-pro** LLM and **GoogleGene
 2. **Experimentation with Variants:** Several alternatives were tested during development:
    - **Data Handling:**
      - *DataFrameLoader* and *CharacterTextSplitter* were explored for data ingestion but led to inefficiencies or poorer embedding quality compared to the simple `CSVLoader`.
-   - **Self-Created Queuing Engine:** Imp![Cocktail Advisor ChatBot.png](../../../../Library/Containers/com.apple.Notes/Data/tmp/TemporaryItems/NSIRD_%D0%9D%D0%BE%D1%82%D0%B0%D1%82%D0%BA%D0%B8_1kneIW/HardLinkURLTemp/F0C3F7BD-9120-4E22-AAB6-C8A229A76C18/1737599950/Cocktail%20Advisor%20ChatBot.png)lemented a queuing system with metadata descriptions but found it less performant and harder to integrate than a simple retriever.
+   - **Self-Created Queuing Engine:** Implemented a queuing system with metadata descriptions but found it less performant and harder to integrate than a simple retriever.
    - **Vector Database Options:**
      - Evaluated FAISS but opted for Pinecone due to its faster performance and easier (and sometimes the only one supported) integration with LangChain.
    - **Model Variants:** Tested simpler LLMs but found that Google’s gemini-1.5-pro model provided more contextually accurate answers.
