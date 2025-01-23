@@ -18,8 +18,8 @@ This project is a Python-based chat application that demonstrates the use of a *
 
 1. Clone the Repository:
    ```bash
-   git clone <repository-link>
-   cd <repository-folder>
+   git clone https://github.com/Liubavaa/CocktailAdvisorChat.git
+   cd CocktailAdvisorChat
    ```
 
 2. Create a Virtual Environment and Activate it:
